@@ -1,17 +1,31 @@
 import React, {useState} from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
+import {useDispatch, useSelector} from "react-redux";
+import {remove, update} from "../../redux/userSlice";
 
 export default function Update() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  console.log(name,email)
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    dispatch(update({name, email}))
+  }
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(remove())
+  }
+
+
   return (
     <div className="update">
       <div className="updateWrapper">
         <h3 className="updateTitle">Update Your Account</h3>
         <Warning />
-        <button className="delete">Delete Account</button>
+        <button onClick={handleDelete} className="delete" >Delete Account</button>
         <div className="updateContainer">
           <form>
             <div className="formItem">
@@ -30,7 +44,7 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder="John"
+                placeholder={user.name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -39,7 +53,7 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder="john@gmail.com"
+                placeholder={user.email}
                 onChange={(e) => setEmail(e.target.value)}
 
               />
@@ -49,7 +63,7 @@ export default function Update() {
               <input className="formInput" type="password" />
             </div>
             <button
-              className="updateButton"
+              onClick={handleUpdate} className="updateButton"
             >
               Update
             </button>
