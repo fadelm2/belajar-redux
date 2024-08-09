@@ -12,8 +12,11 @@ export const userSlice = createSlice({
            state.email = action.payload.email
        },
         remove : (state) => (state={}),
+        addHello :(state, action) =>{
+           state.name = "Hello " + action.payload.name;
+        }
     }
 });
 
-export const {update,remove } = userSlice.actions;
+export const {update,remove, addHello } = userSlice.actions;
 export default userSlice.reducer;

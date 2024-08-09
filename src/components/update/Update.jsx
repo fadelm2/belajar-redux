@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
 import {useDispatch, useSelector} from "react-redux";
-import {remove, update} from "../../redux/userSlice";
+import {addHello, remove, update} from "../../redux/userSlice";
 
 export default function Update() {
   const [name, setName] = useState("");
@@ -12,7 +12,7 @@ export default function Update() {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    dispatch(update({name, email}))
+    dispatch(addHello({name}))
   }
   const handleDelete = (e) => {
     e.preventDefault();
