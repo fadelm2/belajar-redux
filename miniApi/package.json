@@ -1,0 +1,28 @@
+{
+  "name": "typescript-restfulapi",
+  "version": "1.0.0",
+  "description": "Belajar Type Script",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fadelm2/TypeScript-Retsful-API-.git"
+  },
+  "author": "Fadel M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fadelm2/TypeScript-Retsful-API-/issues"
+  },
+  "homepage": "https://github.com/fadelm2/TypeScript-Retsful-API-#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
+}

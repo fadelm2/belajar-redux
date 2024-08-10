@@ -1,0 +1,7 @@
+### Send POST request with json body
+POST http://localhost:8000/api/users/12/update
+Content-Type: application/json
+
+{
+"name" : "fadel"
+}
